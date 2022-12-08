@@ -6,51 +6,27 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    //Пользователь запускает активность и начинает работать с ней
-    //Пользователь запускает активность, работает с ней, а потом, переключается на другую
-    //Пользователь запускает активность, поворачивает телефон
-    //Пользователь запускает активность. поворачивает телефон, переключается на другую активность и возвращается обратно
+/*
+* Раздел 1. Практическое задание 1 «Работа с классами»
+Шаг 1. Открыть среду разработки Android Studio+
+Шаг 2. Создать новый проект+
+Шаг 3. Создать классы для травоядных и плотоядных животных+
+Шаг 4. Каждому присвоить некоторые уникальные поля+
+Шаг 5. Поместить 2 травоядных и 2 плотоядных в список+
+Шаг 6. Вывести список на экран+
+Шаг 7. Загрузить исходный код в репозиторий на платформе GitHub
+Шаг 8. Выложить ссылку в Odin
+
+*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d(MainActivity::class.simpleName, "onCreate")
-        val intent = Intent(this, SecondActivity::class.java)
-        startActivity(intent)
-    }
+        val chicken = Herbivores("Chicken", 20.0, "birds")
+        val elephant = Herbivores("Elephant", 10000.0, "mammals")
+        val wolf = Predator("Wolf", 300.0, "mammals")
+        val cat = Predator("Cat", 30.0, "mammals")
 
-    override fun onStart() {
-        super.onStart()
-        Log.d(MainActivity::class.simpleName, "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(MainActivity::class.simpleName, "onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d(MainActivity::class.simpleName, "onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d(MainActivity::class.simpleName, "onStop")
-
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d(MainActivity::class.simpleName, "onRestart")
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        Log.d(MainActivity::class.simpleName, "onSavedInstanceState")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(MainActivity::class.simpleName, "onDestroy")
+        val list = listOf(chicken, elephant, wolf, cat)
+        println(list) //Log.d
     }
 }
