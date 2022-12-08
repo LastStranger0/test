@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class Predator(
+data class Predator(
     val name: String,
     val size: Double,
     val kind: String

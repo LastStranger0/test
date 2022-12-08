@@ -2,8 +2,14 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.text.Editable
 import android.util.Log
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
 /*
@@ -14,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 Шаг 4. Каждому присвоить некоторые уникальные поля+
 Шаг 5. Поместить 2 травоядных и 2 плотоядных в список+
 Шаг 6. Вывести список на экран+
-Шаг 7. Загрузить исходный код в репозиторий на платформе GitHub
+Шаг 7. Загрузить исходный код в репозиторий на платформе GitHub+
 Шаг 8. Выложить ссылку в Odin
 
 */
@@ -25,8 +31,7 @@ class MainActivity : AppCompatActivity() {
         val elephant = Herbivores("Elephant", 10000.0, "mammals")
         val wolf = Predator("Wolf", 300.0, "mammals")
         val cat = Predator("Cat", 30.0, "mammals")
-
-        val list = listOf(chicken, elephant, wolf, cat)
+        val list = listOf(chicken, wolf, cat)
         println(list) //Log.d
     }
 }
