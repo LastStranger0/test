@@ -6,9 +6,10 @@ import android.os.Handler
 import android.os.Looper
 import android.text.Editable
 import android.util.Log
-import android.widget.EditText
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,11 +28,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val chicken = Herbivores("Chicken", 20.0, "birds")
-        val elephant = Herbivores("Elephant", 10000.0, "mammals")
-        val wolf = Predator("Wolf", 300.0, "mammals")
-        val cat = Predator("Cat", 30.0, "mammals")
-        val list = listOf(chicken, wolf, cat)
-        println(list) //Log.d
+        val names = listOf("chicken", "elephant", "wolf", "cat", "chicken", "elephant", "wolf", "cat", "chicken", "elephant", "wolf", "cat", "chicken", "elephant", "wolf", "cat")
+        val adapter: Adapter = Adapter(this, names)
+        val recyclerView = findViewById<RecyclerView>(R.id.list)
+        recyclerView.adapter = adapter
+
+//        val chicken = Herbivores("Chicken", 20.0, "birds")
+//        val elephant = Herbivores("Elephant", 10000.0, "mammals")
+//        val wolf = Predator("Wolf", 300.0, "mammals")
+//        val cat = Predator("Cat", 30.0, "mammals")
+//        val list = listOf(chicken, wolf, cat)
+//        println(list) //Log.d
     }
 }
